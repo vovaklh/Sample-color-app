@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sample_color_generated/blocs/color_block.dart';
+import 'package:sample_color_generated/blocs/color_bloc/color_block.dart';
+import 'package:sample_color_generated/blocs/color_bloc/color_event.dart';
 import 'package:sample_color_generated/di/locator.dart';
 
 class HomePage extends StatelessWidget {
