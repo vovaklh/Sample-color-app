@@ -4,11 +4,11 @@ import 'package:sample_color_generated/utils/color_utils.dart';
 
 abstract class ColorEvent {}
 
-class GenerateNewColor extends ColorEvent {}
+class GenerateNewColorEvent extends ColorEvent {}
 
 class ColorBloc extends Bloc<ColorEvent, Color> {
   ColorBloc() : super(Colors.white) {
-    on<GenerateNewColor>((event, emit) {
+    on<GenerateNewColorEvent>((event, emit) {
       emit(generateRandomColor());
     });
   }

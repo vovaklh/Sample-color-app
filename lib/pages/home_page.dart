@@ -10,16 +10,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      body: _buildBody(),
+    );
+  }
+
+  Widget _buildBody() {
     return BlocProvider<ColorBloc>(
       create: (context) => _colorBloc,
       child: BlocBuilder<ColorBloc, Color>(
         builder: (context, state) {
-          return Container(
-            color: state,
-            child: Center(
-              child: TextButton(
-                onPressed: () => _colorBloc.add(GenerateNewColor()),
-                child: const Text("Hey there"),
+          return GestureDetector(
+            onTap: () => _colorBloc.add(GenerateNewColorEvent()),
+            child: Container(
+              color: state,
+              child: const Center(
+                child: Text("Hey there"),
               ),
             ),
           );
